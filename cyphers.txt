@@ -1,0 +1,37 @@
+MERGE (n:Person {id: "mayYacoubAlNashashibi"}) ON CREATE SET n.name = "May Yacoub Al-Nashashibi"
+MERGE (n:Technology {id: "dataMining"}) ON CREATE SET n.name = "Data mining"
+MERGE (n:Technology {id: "dataAnalytics"}) ON CREATE SET n.name = "Data Analytics"
+MERGE (n:Technology {id: "patternRecognition"}) ON CREATE SET n.name = "Pattern recognition"
+MERGE (n:Technology {id: "naturalLanguageProcessing"}) ON CREATE SET n.name = "Natural Language Processing (NLP)"
+MERGE (n:Technology {id: "deepLearning"}) ON CREATE SET n.name = "Deep Learning"
+MERGE (n:Project {id: "stressPrediction"}) ON CREATE SET n.name = "Stress Prediction"
+MERGE (n:Project {id: "stressprediction"}) ON CREATE SET n.name = "Stress Prediction", n.summary = "SafeDrive Corp., a leading automobile safety advocate, seeks a sophisticated solution using AI and data-driven techniques to predict stress levels during driving, enhancing driver well-being."
+MERGE (n:Technology {id: "machinelearningalgorithms"}) ON CREATE SET n.name = "Machine Learning Algorithms"
+MERGE (n:Technology {id: "featureselectionmethods"}) ON CREATE SET n.name = "Feature Selection Methods"
+MERGE (n:Technology {id: "python"}) ON CREATE SET n.name = "Python"
+MERGE (n:Client {id: "safedrivecorp"}) ON CREATE SET n.name = "SafeDrive Corp.", n.industry = "automobile safety advocate"
+MERGE (n:Person {id: "sarahJohnson"}) ON CREATE SET n.name = "Sarah Johnson"
+MERGE (n:SlackMessage {id: "gdgjre"}) ON CREATE SET n.text = "I've been actively involved in the StressPredict AI-Driven Driver Well-being Platform project. It's truly transformative for predicting stress levels in drivers, and collaborating with experts has been invaluable."
+MERGE (n:Person {id: "davidPatel"}) ON CREATE SET n.name = "David Patel"
+MERGE (n:SlackMessage {id: "urrwid2"}) ON CREATE SET n.text = "In AlphaCorp's AWS-powered supply chain optimization project, the challenges were rewarding. AWS services like EC2 and SageMaker played a crucial role, making a real difference."
+MERGE (n:Person {id: "mayYacoubAlNashashibi"}) ON CREATE SET n.name = "May Yacoub Al-Nashashibi"
+MERGE (n:SlackMessage {id: "ddfifsew3"}) ON CREATE SET n.text = "Ensuring data security and compliance has been my top priority in the Stress Prediction project. Protecting driver information is vital as we advance well-being in driving."
+MERGE (n:Person {id: "jasonMitchell"}) ON CREATE SET n.name = "Jason Mitchell"
+MERGE (n:SlackMessage {id: "fghdht3e"}) ON CREATE SET n.text = "Working on GammaTech's Azure-based smart logistics platform has been fascinating. Real-time logistics management is transforming the transportation industry."
+MERGE (n:Person {id: "emilyTurner"}) ON CREATE SET n.name = "Emily Turner"
+MERGE (n:SlackMessage {id: "objsuckgd"}) ON CREATE SET n.text = "The IoT integration in GammaTech's Azure project is exciting. Azure technologies have truly revolutionized how we manage logistics operations."
+MERGE (a:Person {id: "mayYacoubAlNashashibi"}) MERGE (b:Technology {id: "dataMining"}) MERGE (a)-[:HAS_SKILLS]->(b)
+MERGE (a:Person {id: "mayYacoubAlNashashibi"}) MERGE (b:Technology {id: "dataAnalytics"}) MERGE (a)-[:HAS_SKILLS]->(b)
+MERGE (a:Person {id: "mayYacoubAlNashashibi"}) MERGE (b:Technology {id: "patternRecognition"}) MERGE (a)-[:HAS_SKILLS]->(b)
+MERGE (a:Person {id: "mayYacoubAlNashashibi"}) MERGE (b:Technology {id: "naturalLanguageProcessing"}) MERGE (a)-[:HAS_SKILLS]->(b)
+MERGE (a:Person {id: "mayYacoubAlNashashibi"}) MERGE (b:Technology {id: "deepLearning"}) MERGE (a)-[:HAS_SKILLS]->(b)
+MERGE (a:Project {id: "stressPrediction"}) MERGE (b:Person {id: "mayYacoubAlNashashibi"}) MERGE (a)-[:HAS_PEOPLE]->(b)
+MERGE (a:Project {id: "stressprediction"}) MERGE (b:Technology {id: "machinelearningalgorithms"}) MERGE (a)-[:USES_TECH]->(b)
+MERGE (a:Project {id: "stressprediction"}) MERGE (b:Technology {id: "featureselectionmethods"}) MERGE (a)-[:USES_TECH]->(b)
+MERGE (a:Project {id: "stressprediction"}) MERGE (b:Technology {id: "python"}) MERGE (a)-[:USES_TECH]->(b)
+MERGE (a:Project {id: "stressprediction"}) MERGE (b:Client {id: "safedrivecorp"}) MERGE (a)-[:HAS_CLIENT]->(b)
+MERGE (a:Person {id: "sarahJohnson"}) MERGE (b:SlackMessage {id: "gdgjre"}) MERGE (a)-[:SENT]->(b)
+MERGE (a:Person {id: "davidPatel"}) MERGE (b:SlackMessage {id: "urrwid2"}) MERGE (a)-[:SENT]->(b)
+MERGE (a:Person {id: "mayYacoubAlNashashibi"}) MERGE (b:SlackMessage {id: "ddfifsew3"}) MERGE (a)-[:SENT]->(b)
+MERGE (a:Person {id: "jasonMitchell"}) MERGE (b:SlackMessage {id: "fghdht3e"}) MERGE (a)-[:SENT]->(b)
+MERGE (a:Person {id: "emilyTurner"}) MERGE (b:SlackMessage {id: "objsuckgd"}) MERGE (a)-[:SENT]->(b)
